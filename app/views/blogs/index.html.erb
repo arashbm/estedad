@@ -1,0 +1,22 @@
+<%- model_class = Blog -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<%= link_to t('.new_html', :default => t("helpers.links.new_html")),
+  new_blog_path,
+  :class => 'btn btn-primary' if admin_signed_in? %>  
+<%= content_tag_for :article, @blogs do |post| %>
+  <h2><%= post.title %></h2>
+  <%= content_tag :div, post.body %>
+
+  <% if admin_signed_in? %>  
+    <%= link_to t('.edit_html', default: t("helpers.links.edit_html")),
+      edit_blog_path(post), class: 'btn btn-mini' %>
+    <%= link_to t('.destroy_html', default: t("helpers.links.destroy_html")),
+      blog_path(post),
+      method: :delete,
+      confirm: t('.confirm', default: t("helpers.links.confirm")),
+      class: 'btn btn-mini btn-danger' %>
+  <% end %> 
+<% end %>
+

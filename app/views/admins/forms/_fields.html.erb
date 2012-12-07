@@ -1,0 +1,23 @@
+<h2>فیلد‌ها</h2>
+<%= t '.description' %>
+<% if form.fields.count == 0 %>
+  <div class="alert alert-block">
+    <%= content_tag :p, t('.no_fields') %>
+    <%= link_to t('.new_field_html'), new_admins_form_field_path(form), class: 'btn btn-primary' %>
+  </div>
+<% else %>
+  <%= content_tag :ul, class: 'unstyled', id: 'fields',
+    data: { update_url: sort_admins_form_fields_url(form) } do %>
+    <%= content_tag_for :li, form.fields do |field| %>
+      <span class='handle'><i class='icon-reorder'></i></span>
+      <%= field.name %> (<%= field.type %>)
+      <%= link_to t('helpers.links.edit_html'), edit_admins_form_field_path(form, field),
+        class: 'btn btn-mini' %>
+      <%= link_to t('helpers.links.destroy_html'), admins_form_field_path(form, field),
+        method: :delete,
+        confirm: t('.confirm', default: t('helpers.links.confirm')),
+        class: 'btn btn-mini btn-danger' %>
+    <% end %>
+  <% end %>
+  <%= link_to t('.new_field_html'), new_admins_form_field_path(form), class: 'btn btn-primary' %>
+<% end %>

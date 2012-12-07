@@ -1,0 +1,12 @@
+<div class="container nav-collapse">
+  <ul class="nav">
+    <li><%= link_to t('navbar.filled_forms'), "/path2"  %></li>
+    <li><%= link_to t('navbar.blog'), blogs_path %></li>
+    <li><%= link_to t('navbar.forms'), admins_forms_path %></li>
+  </ul>
+  <div class="pull-right">
+    <ul class="nav pull-right">
+      <li><%= link_to t('navbar.logout_html'), destroy_admin_session_path, method: :delete %></li>
+    </ul>
+  </div>
+</div><!--/.nav-collapse -->

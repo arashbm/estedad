@@ -1,0 +1,11 @@
+<%= simple_form_for [:admins, @form, @field], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :type %>
+  <%= f.input :description %>
+  <%# <%= f.input :data %1> %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admins_form_path(@form), :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+fa:
+  estedad: 'استعداد‌های درخشان'
+  estedad_title: 'دفتر استعداد‌های درخشان دانشگاه شهید بهشتی'
+
+  # hack to translate true and boolean
+  "true": بله
+  "false": خیر 
+
+  navbar:
+    blog: اخبار و اطلاعیه‌ها
+    filled_forms: فرم‌های پر شده
+    forms: مدیریت فرم‌ها
+    logout_html: <i class='icon-signout'></i> خروج
+
+  helpers:
+    actions: امکانات
+    links:
+      destroy_html: <i class="icon-trash"></i> حذف
+      edit_html: <i class="icon-edit"></i> ویرایش
+      new_html: <i class="icon-plus"></i> جدید
+      confirm: این عمل حذف غیر قابل بازگشت است. آیا مطمئنید؟
+      back: بازگشت
+  blogs:
+    index:
+      title: آخرین اخبار
+      new_html: <i class="icon-plus"></i> خبر جدید
+  admins:
+    forms:
+      index:
+        title: مدیریت فرم‌ها
+      fields:
+        description: برای مرتب کردن فیلد‌ها می‌توانید آنها را از دستگیره به بالا و پایین بکشید.
+        no_fields: هنوز هیچ فیلدی برای این فرم در نظر نگرفته‌اید. 
+        new_field_html: <i class="icon-plus"></i> فیلد جدید
+
+  activerecord:
+    models:
+      form: فرم
+    attributes:
+      form:
+        title: عنوان
+        description: توضیحات
+        enabled: فعال؟ 
+        created_at: تاریخ ایجاد
