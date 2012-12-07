@@ -1,7 +1,9 @@
 Estedad::Application.routes.draw do
 
+
   namespace :admins do
     resources :forms do
+      resources :filled_forms
       resources :fields do
         collection do
           put :sort
@@ -10,7 +12,9 @@ Estedad::Application.routes.draw do
     end
   end
 
-  resources :forms
+  resources :forms do
+    resources :filled_forms
+  end
 
   resources :blogs
 

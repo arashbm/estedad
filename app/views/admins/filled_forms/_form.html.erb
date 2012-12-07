@@ -1,0 +1,15 @@
+<%= simple_form_for [:admins, @form, @filled_form], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class='form-inputs'>
+    <%= f.input :user_id %>
+  </div>
+
+  <%# Here we will render filledfields %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admins_form_filled_forms_path(@form), :class => 'btn' %>
+  </div>
+<% end %>
