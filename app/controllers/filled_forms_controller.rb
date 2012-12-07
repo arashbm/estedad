@@ -30,6 +30,12 @@ class FilledFormsController < ApplicationController
     respond_with(@form, @filled_form)
   end
 
+  # def destroy
+  #   @filled_form = @filled_forms.find(params[:id])
+  #   @filled_form.destroy
+  #   respond_with(@form, @filled_form)
+  # end
+
   private
   def get_form_to_fill
     @form = current_user.fillable_forms.find params[:form_id]
