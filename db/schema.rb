@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20121215061014) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.text     "data"
     t.string   "state"
   end
 
