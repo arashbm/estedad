@@ -20,6 +20,8 @@ class FilledFormsController < ApplicationController
   end
 
   def create
+    @form = current_user.fillable_forms.find params[:form_id]
+    @filled_forms = @form.filled_forms.where(user_id: current_user.id)
     @filled_form = @filled_forms.create(params[:filled_form])
     respond_with @form, @filled_form, location: edit_form_filled_form_path(@form, @filled_form)
   end
