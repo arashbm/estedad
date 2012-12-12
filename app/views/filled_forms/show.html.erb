@@ -1,23 +1,34 @@
-<%- model_class = FilledForm -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= t '.title', default: FilledForm.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:form_id) %>:</strong></dt>
-  <dd><%= @filled_form.form_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @filled_form.user_id %></dd>
-</dl>
+<div>
+  <p>
+    <strong><%= FilledForm.human_attribute_name(:created_at) %>:</strong>
+    <%= l @filled_form.created_at %>
+  </p>
+  <p>
+    <strong><%= FilledForm.human_attribute_name(:updated_at) %>:</strong>
+    <%= l @filled_form.updated_at %>
+  </p>
+  <p>
+    <strong><%= FilledForm.human_attribute_name(:state) %>:</strong>
+    <%= @filled_form.state %>
+  </p>
+  <%= content_tag_for :p, @filled_form.filled_fields do |filled_field| %>
+    <strong><%= filled_field.field.name %>:</strong>
+    <%= filled_field.value %>
+  <% end %>
+</div>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              form_filled_forms_path(@form), :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_form_filled_form_path(@form, @filled_form), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              form_filled_form_path(@form, @filled_form),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+  <%= link_to t('.back', default: t("helpers.links.back")),
+    form_path(@form), class: 'btn'  %>
+  <%= link_to t('.edit', default: t("helpers.links.edit")),
+    edit_form_filled_form_path(@form, @filled_form), class: 'btn' %>
+  <%= link_to t('.destroy', default: t("helpers.links.destroy")),
+    form_filled_form_path(@form, @filled_form),
+    method: 'delete',
+    confirm: t('.confirm', default: t("helpers.links.confirm")),
+    class: 'btn btn-danger' %>
 </div>

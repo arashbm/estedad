@@ -2,9 +2,9 @@
   <%= f.error_notification %>
 
   <div class='form-inputs'>
-    <%= f.fields_for @filled_form.filled_fields do |ff| %>
-      <%= ff.object %>
-      <%= ff.input :value, label: 'as' %>
+    <%= f.fields_for :filled_fields do |ff| %>
+      <% field = ff.object.field %>
+      <%= ff.input :value, label: field.name, as: field.input_type %>
       <%# Here we will render filledfields %>
     <% end %>
   </div>

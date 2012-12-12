@@ -12,7 +12,9 @@
       <td><%= l filled_form.created_at %></td>
       <td><%= l filled_form.updated_at %></td>
       <td><%= filled_form.state %></td>
+      <td>
+        <%= link_to(t('.edit_html'), edit_form_filled_form_path(form, filled_form), class: 'btn btn-mini') if current_user.editable_filled_forms.include? filled_form %>
+      </td>
     <% end %>
   </tbody>
 </table>
-<%= link_to t('.fill_new_html'), new_form_filled_form_path(form), class: 'btn' %>
