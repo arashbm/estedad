@@ -7,5 +7,18 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  
+  has_many :filled_forms
+
+  def visible_forms
+    Form.scoped
+  end
+
+  def fillable_forms
+    Form.where(enabled: true)
+  end
+
+  def visible_filled_forms
+    filled_forms
+  end
 end

@@ -21,8 +21,7 @@ class FilledFormsController < ApplicationController
   end
 
   def create
-    @filled_form = @filled_forms.new(params[:filled_form])
-    @filled_form.save
+    @filled_form = @filled_forms.create(params[:filled_form])
     respond_with(@form, @filled_form)
   end
 

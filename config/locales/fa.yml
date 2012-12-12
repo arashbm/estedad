@@ -19,11 +19,17 @@ fa:
       edit_html: <i class="icon-edit"></i> ویرایش
       new_html: <i class="icon-plus"></i> جدید
       confirm: این عمل حذف غیر قابل بازگشت است. آیا مطمئنید؟
+      cancel: بی‌خیال 
       back: بازگشت
   blogs:
     index:
       title: آخرین اخبار
       new_html: <i class="icon-plus"></i> خبر جدید
+  forms:
+    index:
+      title: درخواست تسهیلات
+    form_filled_forms:
+      fill_new_html: <i class='icon-plus'></i> پر کردن
   admins:
     forms:
       index:
@@ -36,7 +42,12 @@ fa:
   activerecord:
     models:
       form: فرم
+      filled_form: فرم پر شده
     attributes:
+      filled_form:
+        created_at: تاریخ ایجاد
+        updated_at: آخرین تغییرات
+        state: وضعیت
       form:
         title: عنوان
         description: توضیحات

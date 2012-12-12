@@ -4,15 +4,21 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @form.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:enabled) %>:</strong></dt>
-  <dd><%= @form.enabled %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @form.description %></dd>
+  <p>
+    <strong><%= model_class.human_attribute_name(:title) %>:</strong>
+    <%= @form.title %>
+  </p>
+  <p>
+    <strong><%= model_class.human_attribute_name(:enabled) %>:</strong>
+    <%= @form.enabled %>
+  </p>
+  <p>
+    <strong><%= model_class.human_attribute_name(:description) %>:</strong>
+    <%= @form.description %>
+  </p>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              forms_path, :class => 'btn'  %>
+    forms_path, :class => 'btn'  %>
 </div>
