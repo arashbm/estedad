@@ -28,8 +28,11 @@ fa:
   forms:
     index:
       title: درخواست تسهیلات
-    form_filled_forms:
       fill_new_html: <i class='icon-plus'></i> پر کردن
+    show:
+      fill_new_html: <i class='icon-plus'></i> پر کردن
+    form_filled_forms:
+      edit_html: <i class='icon-edit'></i> تکمیل 
   admins:
     forms:
       index:

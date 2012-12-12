@@ -3,7 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
+<p>
   <p>
     <strong><%= model_class.human_attribute_name(:title) %>:</strong>
     <%= @form.title %>
@@ -16,9 +16,11 @@
     <strong><%= model_class.human_attribute_name(:description) %>:</strong>
     <%= @form.description %>
   </p>
-</dl>
+</p>
+<%= render 'form_filled_forms', form: @form %>
 
 <div class="form-actions">
+  <%= fill_new_btn @form %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
     forms_path, :class => 'btn'  %>
 </div>

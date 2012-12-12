@@ -5,4 +5,9 @@ class Field < ActiveRecord::Base
   def self.inheritance_column
     :inh_type
   end
+
+  def input_type
+    # this should return correct input type for deffrent types
+    :string
+  end
 end

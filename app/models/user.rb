@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   def visible_filled_forms
     filled_forms
   end
+
+  def editable_filled_forms
+    filled_forms
+  end
 end
