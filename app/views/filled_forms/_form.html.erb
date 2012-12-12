@@ -2,14 +2,15 @@
   <%= f.error_notification %>
 
   <div class='form-inputs'>
-    <%= f.input :user_id %>
+    <%= f.fields_for @filled_form.filled_fields do |ff| %>
+      <%= ff.object %>
+      <%= ff.input :value, label: 'as' %>
+      <%# Here we will render filledfields %>
+    <% end %>
   </div>
-
-  <%# Here we will render filledfields %>
-
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                form_filled_forms_path(@form), :class => 'btn' %>
+    <%= f.button :submit, class: 'btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+      form_filled_forms_path(@form), class: 'btn' %>
   </div>
 <% end %>
