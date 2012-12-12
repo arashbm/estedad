@@ -48,7 +48,7 @@
           <% if admin_signed_in? %>
             <%= render 'layouts/admin_navbar' %>
           <% elsif user_signed_in? %>
-            <%= render 'layouts/student_navbar' %>
+            <%= render 'layouts/user_navbar' %>
           <% else%>
             <%= render 'layouts/navbar' %>
           <% end %>

@@ -1,29 +1,8 @@
-<%- model_class = Form -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%= t '.title' %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:enabled) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @forms.each do |form| %>
-      <tr>
-        <td><%= link_to form.id, form_path(form) %></td>
-        <td><%= form.title %></td>
-        <td><%= form.enabled %></td>
-        <td><%= form.description %></td>
-        <td><%=l form.created_at %></td>
-        <td>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= content_tag_for :article, @forms do |form| %>
+  <h2><%= link_to form.title, form %></h2>
+  <%= content_tag :div, form.description %>
+  <%= render 'form_filled_forms', form: form %>
+<% end %>

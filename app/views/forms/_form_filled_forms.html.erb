@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= FilledForm.human_attribute_name(:created_at) %></th>
+      <th><%= FilledForm.human_attribute_name(:updated_at) %></th>
+      <th><%= FilledForm.human_attribute_name(:state) %></th>
+      <th><%= t '.actions', default: t('helpers.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= content_tag_for :tr, current_user.visible_filled_forms.where(form_id: form) do |filled_form| %>
+      <td><%= l filled_form.created_at %></td>
+      <td><%= l filled_form.updated_at %></td>
+      <td><%= filled_form.state %></td>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to t('.fill_new_html'), new_form_filled_form_path(form), class: 'btn' %>
