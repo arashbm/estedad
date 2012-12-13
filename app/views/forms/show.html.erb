@@ -3,16 +3,24 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @form.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:enabled) %>:</strong></dt>
-  <dd><%= @form.enabled %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @form.description %></dd>
-</dl>
+<p>
+  <p>
+    <strong><%= model_class.human_attribute_name(:title) %>:</strong>
+    <%= @form.title %>
+  </p>
+  <p>
+    <strong><%= model_class.human_attribute_name(:enabled) %>:</strong>
+    <%= @form.enabled %>
+  </p>
+  <p>
+    <strong><%= model_class.human_attribute_name(:description) %>:</strong>
+    <%= @form.description %>
+  </p>
+</p>
+<%= render 'form_filled_forms', form: @form %>
 
 <div class="form-actions">
+  <%= fill_new_btn @form %>
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              forms_path, :class => 'btn'  %>
+    forms_path, :class => 'btn'  %>
 </div>

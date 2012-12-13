@@ -19,26 +19,54 @@ fa:
       edit_html: <i class="icon-edit"></i> ویرایش
       new_html: <i class="icon-plus"></i> جدید
       confirm: این عمل حذف غیر قابل بازگشت است. آیا مطمئنید؟
+      cancel: بی‌خیال 
       back: بازگشت
+    titles:
+      new: "ایجاد %{model} جدید"
+      edit: "ویرایش %{model}"
+      index: "%{model}‌ها"
+      show: "%{model}"
   blogs:
     index:
       title: آخرین اخبار
       new_html: <i class="icon-plus"></i> خبر جدید
+  forms:
+    index:
+      title: درخواست تسهیلات
+      fill_new_html: <i class='icon-plus'></i> پر کردن
+    show:
+      fill_new_html: <i class='icon-plus'></i> پر کردن
+    form_filled_forms:
+      edit_html: <i class='icon-edit'></i> تکمیل 
   admins:
     forms:
       index:
         title: مدیریت فرم‌ها
+        filled_form_count: "%{count} نسخه پر شده"
+      show:
+        filled_form_count: "%{count} نسخه پر شده"
       fields:
         description: برای مرتب کردن فیلد‌ها می‌توانید آنها را از دستگیره به بالا و پایین بکشید.
         no_fields: هنوز هیچ فیلدی برای این فرم در نظر نگرفته‌اید. 
         new_field_html: <i class="icon-plus"></i> فیلد جدید
+    filled_forms:
+      index:
+        title_html: نسخه‌های پر شده <small>%{form}</small>
 
   activerecord:
     models:
       form: فرم
+      filled_form: فرم پر شده
     attributes:
+      filled_form:
+        created_at: تاریخ ایجاد
+        updated_at: آخرین تغییرات
+        state: وضعیت
+        user: کاربر
+        id: شناسه
       form:
         title: عنوان
         description: توضیحات
         enabled: فعال؟ 
         created_at: تاریخ ایجاد
+        filled_forms: فرم پر شده
