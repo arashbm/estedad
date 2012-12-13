@@ -25,4 +25,9 @@ class User < ActiveRecord::Base
   def editable_filled_forms
     filled_forms
   end
+
+  def name
+    # placeholder for actual field
+    email
+  end
 end

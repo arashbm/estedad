@@ -11,6 +11,9 @@
 
 <%= render 'fields', form: @form %>
 
+<h2><%= Form.human_attribute_name(:filled_forms) %></h2>
+<%= link_to t('.filled_form_count', count: @form.filled_forms.count), admins_form_filled_forms_path(@form) %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
     admins_forms_path, :class => 'btn'  %>
