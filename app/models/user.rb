@@ -30,4 +30,9 @@ class User < ActiveRecord::Base
     # placeholder for actual field
     email
   end
+
+  def name
+    # placeholder for actual field
+    email
+  end
 end
