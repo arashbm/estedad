@@ -1,19 +1,18 @@
-<%- model_class = Form -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%=t '.title', default: Form.model_name.human %></h1>
 </div>
 
 <p>
   <p>
-    <strong><%= model_class.human_attribute_name(:title) %>:</strong>
+    <strong><%= Form.human_attribute_name(:title) %>:</strong>
     <%= @form.title %>
   </p>
   <p>
-    <strong><%= model_class.human_attribute_name(:enabled) %>:</strong>
+    <strong><%= Form.human_attribute_name(:enabled) %>:</strong>
     <%= @form.enabled %>
   </p>
   <p>
-    <strong><%= model_class.human_attribute_name(:description) %>:</strong>
+    <strong><%= Form.human_attribute_name(:description) %>:</strong>
     <%= @form.description %>
   </p>
 </p>
@@ -21,6 +20,6 @@
 
 <div class="form-actions">
   <%= fill_new_btn @form %>
-  <%= link_to t('.back', :default => t("helpers.links.back")),
+  <%= link_to t('.back', default: t("helpers.links.back")),
     forms_path, :class => 'btn'  %>
 </div>
