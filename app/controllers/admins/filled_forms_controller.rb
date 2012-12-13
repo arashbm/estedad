@@ -21,14 +21,13 @@ class Admins::FilledFormsController < ApplicationController
   end
 
   def create
-    @filled_form = @form.filled_forms.new(params[:filled_form])
-    @filled_form.save
-    respond_with(:admins, @form, @filled_form)
+    @filled_form = @form.filled_forms.create(params[:filled_form], as: :admin)
+    respond_with(:admins, @form, @filled_form, location: edit_form_filled_form(@form, @filled_form))
   end
 
   def update
     @filled_form = @form.filled_forms.find(params[:id])
-    @filled_form.update_attributes(params[:filled_form])
+    @filled_form.update_attributes(params[:filled_form], as: :admin)
     respond_with(:admins, @form, @filled_form)
   end
 

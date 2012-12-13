@@ -7,6 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:enabled) %></th>
+      <th><%= model_class.human_attribute_name(:filled_forms) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= link_to form.title, admins_form_path(form) %></td>
         <td><%= t form.enabled? %></td>
+        <td><%= link_to t('.filled_form_count', count: form.filled_forms.count), admins_form_filled_forms_path(form) %></td>
         <td><%= truncate form.description, length: 60, separator: ' ' %></td>
         <td><%= l form.created_at %></td>
         <td>

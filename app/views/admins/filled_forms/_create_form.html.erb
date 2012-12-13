@@ -1,17 +1,12 @@
 <%= simple_form_for [:admins, @form, @filled_form], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.error_notification %>
 
-  <div class='form-inputs'>
+  <div class="form-inputs">
     <%= f.association :user %>
-    <%= f.fields_for :filled_fields do |ff| %>
-      <% field = ff.object.field %>
-      <%= ff.input :value, label: field.name, hint: field.description, as: field.input_type %>
-      <%# Here we will render filledfields %>
-    <% end %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn-primary' %>
     <%= link_to t('.cancel', default: t("helpers.links.cancel")),
-      admins_form_filled_forms_path(@form), class: 'btn' %>
+      admin_form_filled_form_path(@form, @filled_form), class: 'btn' %>
   </div>
 <% end %>
