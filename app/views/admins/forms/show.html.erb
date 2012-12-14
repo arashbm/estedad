@@ -12,7 +12,7 @@
 <%= render 'fields', form: @form %>
 
 <h2><%= Form.human_attribute_name(:filled_forms) %></h2>
-<%= link_to_admin_filled_fields %>
+<%= link_to_admin_filled_fields(@form) %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

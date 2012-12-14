@@ -5,13 +5,7 @@ fa:
   # hack to translate boolean
   "true": بله
   "false": خیر 
-
-  navbar:
-    blog: اخبار و اطلاعیه‌ها
-    filled_forms: فرم‌های پر شده
-    forms: مدیریت فرم‌ها
-    logout_html: <i class='icon-signout'></i> خروج
-
+      
   helpers:
     actions: امکانات
     links:
@@ -26,6 +20,21 @@ fa:
       edit: "ویرایش %{model}"
       index: "%{model}‌ها"
       show: "%{model}"
+
+  layouts:
+    navbar: &navbar
+      blog: اخبار و اطلاعیه‌ها
+      logout_html: <i class='icon-signout'></i> خروج
+      sign_in_html: <i class='icon-signin'></i> ورود
+      sign_up_html: <i class='icon-user'></i> ثبت‌نام
+    admin_navbar:
+      <<: *navbar
+      filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
+      forms: مدیریت فرم‌ها
+    user_navbar:
+      <<: *navbar
+      forms: تسهیلات
+      prefrences_html: <i class="icon-cog"></i> مشخصات
   blogs:
     index:
       title: آخرین اخبار
@@ -56,9 +65,15 @@ fa:
 
   activerecord:
     models:
+      user: کاربر
       form: فرم
       filled_form: فرم پر شده
     attributes:
+      user:
+        email: ایمیل
+        password: رمز‌عبور
+        password_confirmation: مجددا همان رمز عبور
+        current_password: رمز عبور فعلی
       filled_form:
         created_at: تاریخ ایجاد
         updated_at: آخرین تغییرات
