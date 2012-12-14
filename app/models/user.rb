@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
-  has_many :filled_forms
+  has_many :filled_forms, order: "updated_at DESC"
 
   def visible_forms
     Form.scoped
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def editable_filled_forms
-    filled_forms
+    filled_forms.where(state: [nil, 'not_reviewed'])
   end
 
   def name

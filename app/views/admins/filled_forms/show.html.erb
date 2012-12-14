@@ -17,7 +17,7 @@
   </p>
   <p>
     <strong><%= FilledForm.human_attribute_name(:state) %>:</strong>
-    <%= @filled_form.state %>
+    <%= state_label @filled_form %>
   </p>
   <%= content_tag_for :p, @filled_form.filled_fields do |filled_field| %>
     <strong><%= filled_field.field.name %>:</strong>
@@ -27,7 +27,7 @@
 
 <div class="form-actions">
   <%= link_to t('.back', default: t("helpers.links.back")),
-    admins_form_path(@form), class: 'btn'  %>
+    admins_form_filled_forms_path(@form), class: 'btn'  %>
   <%= link_to t('.edit', default: t("helpers.links.edit_html")),
     edit_admins_form_filled_form_path(@form, @filled_form), class: 'btn' %>
   <%= link_to t('.destroy', default: t("helpers.links.destroy_html")),
