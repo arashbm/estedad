@@ -4,7 +4,7 @@
 
 <ul class="unstyled">
   <li><strong><%= Form.human_attribute_name(:enabled) %>:</strong>
-  <%= t @form.enabled? %></li>
+  <%= t @form.enabled?.to_s %></li>
   <li><strong><%= Form.human_attribute_name(:description) %>:</strong>
   <%= content_tag :div, @form.description %></li>
 </ul>
@@ -12,7 +12,7 @@
 <%= render 'fields', form: @form %>
 
 <h2><%= Form.human_attribute_name(:filled_forms) %></h2>
-<%= link_to t('.filled_form_count', count: @form.filled_forms.count), admins_form_filled_forms_path(@form) %>
+<%= link_to_admin_filled_fields %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -2,7 +2,7 @@ fa:
   estedad: 'استعداد‌های درخشان'
   estedad_title: 'دفتر استعداد‌های درخشان دانشگاه شهید بهشتی'
 
-  # hack to translate true and boolean
+  # hack to translate boolean
   "true": بله
   "false": خیر 
 
@@ -31,6 +31,7 @@ fa:
       title: آخرین اخبار
       new_html: <i class="icon-plus"></i> خبر جدید
   forms:
+    not_enabled_html: <p>این فرم <strong>فعال نیست</strong>. ممکن است امکان استفاده از آن هنوز فعال نشده باشد یا مدت پر کردن آن به اتمام رسیده باشد. تا فعال شدن مجدد آن شما <em>قادر نخواهید بود نسخه‌ی جدیدی از آن پر کنید</em>. هرچند هنوز <em>قادر هستید نسخه‌های <strong>پر‌شده و بررسی نشده‌ی قبلی</strong> را ویرایش کنید</em>.</p><p>اگر فکر می‌کنید این یک اشتباه است با دفتر استعدادهای درخشان تماس بگیرید.</p>
     index:
       title: درخواست تسهیلات
       fill_new_html: <i class='icon-plus'></i> پر کردن
@@ -42,9 +43,9 @@ fa:
     forms:
       index:
         title: مدیریت فرم‌ها
-        filled_form_count: "%{count} نسخه پر شده"
+        filled_form_count: "%{count} نسخه پر شده (%{not_reviewed_count} بررسی نشده)"
       show:
-        filled_form_count: "%{count} نسخه پر شده"
+        filled_form_count: "%{count} نسخه پر شده (%{not_reviewed_count} بررسی نشده)"
       fields:
         description: برای مرتب کردن فیلد‌ها می‌توانید آنها را از دستگیره به بالا و پایین بکشید.
         no_fields: هنوز هیچ فیلدی برای این فرم در نظر نگرفته‌اید. 

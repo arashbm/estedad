@@ -6,11 +6,17 @@ class FilledForm < ActiveRecord::Base
   accepts_nested_attributes_for :filled_fields
 
   validates :user, presence: true
+  validates :state, presence: true
 
   attr_accessible :filled_fields_attributes
-  attr_accessible :filled_fields_attributes, :user_id, as: :admin
+  attr_accessible :filled_fields_attributes, :user_id, :state, as: :admin
 
   after_initialize :ensure_fields, if: :persisted?
+  before_validation :ensure_state
+
+  def ensure_state
+    self.state ||= :not_reviewed
+  end
 
   def ensure_fields
     form.fields.each do |i|
