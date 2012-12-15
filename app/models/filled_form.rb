@@ -7,6 +7,7 @@ class FilledForm < ActiveRecord::Base
 
   validates :user, presence: true
   validates :state, presence: true
+  validates_associated :filled_fields
 
   attr_accessible :filled_fields_attributes
   attr_accessible :filled_fields_attributes, :user_id, :state, as: :admin
