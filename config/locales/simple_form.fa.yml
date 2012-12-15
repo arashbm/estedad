@@ -11,6 +11,14 @@ fa:
     error_notification:
       default_message: "لطفا به مشکلات زیر نگاهی بیندازید:"
     options:
+      field:
+        type:
+          points: نمره
+          generic_string: کلمات
+          generic_number: عدد اعشاری
+          generic_radio_buttons: انتخاب یکی از چند گزینه
+          generic_check_boxs: انتخاب چند گزینه
+          generic_attachinary: فایل(های) ضمیمه
       filled_form:
         state:
           not_reviewed: بررسی نشده

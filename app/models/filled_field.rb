@@ -14,20 +14,19 @@ class FilledField < ActiveRecord::Base
   private
 
   def being_included
-    unless value.blank? || !field.validations.include?('inclusion')
+    if !value.blank? && field.validations.include?('inclusion')
       errors.add(:value, :inclusion) unless field.option('collection').include? value
     end
   end
 
   def being_numerical
-    unless value.blank? || !field.validations.include?('numericality')
+    if !value.blank? && field.validations.include?('numericality')
       min = field.option('min')
       max = field.option('max')
       step = field.option('step').to_f
       begin
         new_val = Float(value)
       rescue TypeError
-        p "WTF?!: #{value}"
         errors.add(:value, :not_a_number) and return 
       end
       value = new_val

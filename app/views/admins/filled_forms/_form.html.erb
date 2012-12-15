@@ -6,7 +6,7 @@
     <%= f.input :state, collection: Rails.configuration.default_filledforms_states %>
     <%= f.fields_for :filled_fields do |ff| %>
       <% field = ff.object.field %>
-      <%= ff.input :value, label: field.name, hint: field.description, as: field.input_type %>
+      <%= ff.input :value, label: field.name, hint: field.description, as: field.input_type, collection: field.splited_collection %>
       <%# Here we will render filledfields %>
     <% end %>
   </div>
