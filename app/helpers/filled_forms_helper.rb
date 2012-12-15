@@ -32,4 +32,14 @@ module FilledFormsHelper
   def state_label(ff)
     content_tag :i, translated_state(ff), class: "label label-#{state_class(ff)}"
   end
+
+  def filled_field_value(filled_field)
+    if filled_field.field.type == 'attachinary_file'
+      filled_field.attachments.map do |a|
+        "<a href='http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/image/upload/#{a.path}'>#{cl_image_tag(a.path, { size: '75x75', crop: :fill, format: :jpg })}</a>" 
+      end.inject(:+).try(:html_safe)
+    else
+      filled_field.value.to_s
+    end
+  end
 end

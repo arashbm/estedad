@@ -16,7 +16,7 @@ class Field < ActiveRecord::Base
   end
 
   def set_defaults
-    return unless field_type['default']
+    return unless field_type && field_type['default']
     field_type['default'].each_pair do |key, val|
       data[key] = val if data[key].blank?
     end
@@ -31,7 +31,7 @@ class Field < ActiveRecord::Base
   end
 
   def input_type
-    field_type['as'].to_sym
+    p field_type['as'].to_sym
   end
 
   def visible_options

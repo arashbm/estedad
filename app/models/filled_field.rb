@@ -2,14 +2,15 @@ class FilledField < ActiveRecord::Base
   belongs_to :field
   belongs_to :filled_form
 
-  attr_accessible :value
-  attr_accessible :value, as: :admin
+  attr_accessible :value, :attachments
+  attr_accessible :value, :attachments, as: :admin
 
   validates :field, presence: true
 
   validate :being_numerical
   validate :being_included
 
+  has_attachments :attachments, maximum: 10
 
   private
 

@@ -4,8 +4,12 @@
   <div class='form-inputs'>
     <%= f.fields_for :filled_fields do |ff| %>
       <% field = ff.object.field %>
-      <%= ff.input :value, label: field.name, hint: field.description, as: field.input_type, collection: field.splited_collection %>
       <%# Here we will render filledfields %>
+      <% if field.input_type == :attachinary %>
+        <%= ff.input :attachments, label: field.name, hint: field.description, as: :attachinary, multipe: field.option('multipe') %>
+      <% else %>
+        <%= ff.input :value, label: field.name, hint: field.description, as: field.input_type, collection: field.splited_collection %>
+      <% end %>
     <% end %>
   </div>
   <div class="form-actions">

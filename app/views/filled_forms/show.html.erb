@@ -17,7 +17,7 @@
   </p>
   <%= content_tag_for :p, @filled_form.filled_fields do |filled_field| %>
     <strong><%= filled_field.field.name %>:</strong>
-    <%= filled_field.value %>
+    <%= filled_field_value filled_field %>
   <% end %>
 </div>
 
