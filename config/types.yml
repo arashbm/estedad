@@ -5,7 +5,7 @@ generic_string:
   validations: []
   as: string
 
-genric_radio_buttons:
+generic_radio_buttons:
   options:
     collection: array
   validations: [inclusion]
@@ -15,7 +15,7 @@ generic_check_boxes:
   options:
     collection: array
   validations: [all_inclusion]
-  as: chack_boxes
+  as: check_boxes
 
 generic_number:
   options:

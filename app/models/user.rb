@@ -5,10 +5,23 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  
+  store :data, accessors: [ :father_name, :phone_number, :mobile_number, :major, :minor, :birth_date, :identification_number, :student_identification_number ]
+
+  attr_accessible :email, :password, :password_confirmation, :remember_me,
+    :first_name, :last_name, :father_name, :phone_number, :mobile_number, :major, :minor, :birth_date, :identification_number, :student_identification_number
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :father_name, presence: true
+  validates :phone_number, presence:true
+  validates :mobile_number, presence: true
+  validates :major, presence: true
+  validates :birth_date, presence: true
+  validates :identification_number, presence: true
+  validates :student_identification_number, presence: true
+
   has_many :filled_forms, order: "updated_at DESC"
+
 
   def visible_forms
     Form.scoped
@@ -27,7 +40,6 @@ class User < ActiveRecord::Base
   end
 
   def name
-    # placeholder for actual field
-    email
+    "#{first_name} #{last_name}"
   end
 end
