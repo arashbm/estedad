@@ -12,6 +12,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20121216072256) do
+
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -63,10 +64,6 @@ ActiveRecord::Schema.define(:version => 20121216072256) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-<<<<<<< Updated upstream
-    t.text     "data"
-=======
->>>>>>> Stashed changes
     t.string   "state"
   end
 

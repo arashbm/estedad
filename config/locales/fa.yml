@@ -48,6 +48,21 @@ fa:
       fill_new_html: <i class='icon-plus'></i> پر کردن
     form_filled_forms:
       edit_html: <i class='icon-edit'></i> تکمیل 
+  users:
+    shared:
+      links:
+        sign_up: ثبت‌نام
+        sign_in: ورود
+    sessions:
+      new:
+        sign-in: ورود
+    registrations:
+      new:
+        sign-up: ثبت‌نام
+      edit:
+        title: ویرایش مشخصات
+        update: به روز رسانی
+        
   admins:
     forms:
       index:
@@ -68,6 +83,7 @@ fa:
       user: کاربر
       form: فرم
       filled_form: فرم پر شده
+      user: کاربر
     attributes:
       user:
         email: ایمیل
@@ -86,3 +102,6 @@ fa:
         enabled: فعال؟ 
         created_at: تاریخ ایجاد
         filled_forms: فرم پر شده
+      user:
+        first_name: نام
+        last_name: نام خانوادگی
