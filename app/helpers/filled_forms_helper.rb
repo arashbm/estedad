@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module FilledFormsHelper
 
   def fill_new_btn(form)
@@ -39,7 +40,7 @@ module FilledFormsHelper
         "<a href='http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/image/upload/#{a.path}'>#{cl_image_tag(a.path, { size: '75x75', crop: :fill, format: :jpg })}</a>" 
       end.inject(:+).try(:html_safe)
     else
-      filled_field.value.to_s
+      filled_field.value
     end
   end
 end

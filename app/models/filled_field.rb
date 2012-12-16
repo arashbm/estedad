@@ -22,8 +22,8 @@ class FilledField < ActiveRecord::Base
 
   def being_numerical
     if !value.blank? && field.validations.include?('numericality')
-      min = field.option('min')
-      max = field.option('max')
+      min = field.option('min').to_f
+      max = field.option('max').to_f
       step = field.option('step').to_f
       begin
         new_val = Float(value)
