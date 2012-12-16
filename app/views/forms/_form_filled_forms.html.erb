@@ -1,20 +1,22 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th><%= FilledForm.human_attribute_name(:created_at) %></th>
-      <th><%= FilledForm.human_attribute_name(:updated_at) %></th>
-      <th><%= FilledForm.human_attribute_name(:state) %></th>
-      <th><%= t '.actions', default: t('helpers.actions') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= content_tag_for :tr, current_user.visible_filled_forms.where(form_id: form) do |filled_form| %>
-      <td><%= l filled_form.created_at %></td>
-      <td><%= l filled_form.updated_at %></td>
-      <td><%= state_label filled_form %></td>
-      <td>
-        <%= link_to(t('.edit_html'), edit_form_filled_form_path(form, filled_form), class: 'btn btn-mini') if current_user.editable_filled_forms.include? filled_form %>
-      </td>
-    <% end %>
-  </tbody>
-</table>
+<% if current_user.visible_filled_forms.where(form_id: form).count > 0 %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= FilledForm.human_attribute_name(:created_at) %></th>
+        <th><%= FilledForm.human_attribute_name(:updated_at) %></th>
+        <th><%= FilledForm.human_attribute_name(:state) %></th>
+        <th><%= t '.actions', default: t('helpers.actions') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= content_tag_for :tr, current_user.visible_filled_forms.where(form_id: form) do |filled_form| %>
+        <td><%= l filled_form.created_at %></td>
+        <td><%= l filled_form.updated_at %></td>
+        <td><%= state_label filled_form %></td>
+        <td>
+          <%= link_to(t('.edit_html'), edit_form_filled_form_path(form, filled_form), class: 'btn btn-mini') if current_user.editable_filled_forms.include? filled_form %>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
