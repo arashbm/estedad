@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .

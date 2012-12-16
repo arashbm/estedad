@@ -1,0 +1,43 @@
+fa:
+  simple_form:
+    "yes": 'بله'
+    "no": 'خیر'
+    required:
+      text: 'الزامی'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "لطفا به مشکلات زیر نگاهی بیندازید:"
+    options:
+      field:
+        type:
+          points: نمره
+          generic_string: کلمات
+          generic_number: عدد اعشاری
+          generic_radio_buttons: انتخاب یکی از چند گزینه
+          generic_check_boxes: انتخاب چند گزینه
+          attachinary_file: فایل(های) ضمیمه
+      filled_form:
+        state:
+          not_reviewed: بررسی نشده
+          reviewed: بررسی شده
+          review_failed: ناموفق در بررسی
+          processing: طی مراحل
+          process_failed: ناموفق در طی مراحل
+          successful: درخواست موفق
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+

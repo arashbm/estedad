@@ -33,8 +33,15 @@ GEM
       builder
       girl_friday
     arel (3.0.2)
+    attachinary (1.1.0)
+      cloudinary (~> 1.0.40)
+      rails (~> 3.2)
+    aws_cf_signer (0.1.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    cloudinary (1.0.40)
+      aws_cf_signer
+      rest-client
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -109,6 +116,8 @@ GEM
       json (~> 1.4)
     responders (0.9.3)
       railties (~> 3.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rubinius-actor (0.0.2)
       rubinius-core-api
     rubinius-core-api (0.0.1)
@@ -150,6 +159,8 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake
+  attachinary
+  cloudinary
   coffee-rails (~> 3.2.1)
   devise
   devise-i18n
