@@ -100,6 +100,16 @@ fa:
         steps: قدم‌های قابل قبول
       user:
         email: ایمیل
+        first_name: نام
+        last_name: نام خانوادگی
+        father_name: نام پدر
+        phone_number: شماره‌ی تلفن
+        mobile_number: شماره‌ی موبایل
+        major: رشته
+        minor: گرایش
+        identification_number: شماره‌ی ملی
+        birth_date: تاریخ تولد
+        student_identification_number: شماره‌ی دانشجویی
         password: رمز‌عبور
         password_confirmation: مجددا همان رمز عبور
         current_password: رمز عبور فعلی
@@ -115,6 +125,3 @@ fa:
         enabled: فعال؟ 
         created_at: تاریخ ایجاد
         filled_forms: فرم پر شده
-      user:
-        first_name: نام
-        last_name: نام خانوادگی
