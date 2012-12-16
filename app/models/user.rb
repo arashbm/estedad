@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   store :data, accessors: [ :father_name, :phone_number, :mobile_number, :major, :minor, :birth_date, :identification_number, :student_identification_number ]
-  
+
   attr_accessible :email, :password, :password_confirmation, :remember_me,
     :first_name, :last_name, :father_name, :phone_number, :mobile_number, :major, :minor, :birth_date, :identification_number, :student_identification_number
 
