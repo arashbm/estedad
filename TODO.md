@@ -1,3 +1,4 @@
-* FilledForm finit state machine
-* Adding specific field types
-* File attachment
+* Export data (xls, xlsx)
+* User list
+* [maybe] confirmable
+* basic user info and devise form customization
