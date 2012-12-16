@@ -6,6 +6,7 @@
     <tr>
       <th><%= FilledForm.human_attribute_name(:id) %></th>
       <th><%= FilledForm.human_attribute_name(:user) %></th>
+      <th><%= FilledForm.human_attribute_name(:state) %></th>
       <th><%= FilledForm.human_attribute_name(:created_at) %></th>
       <th><%= FilledForm.human_attribute_name(:updated_at) %></th>
       <th><%= t '.actions', :default => t("helpers.actions") %></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= link_to filled_form.id, admins_form_filled_form_path(@form, filled_form) %></td>
         <td><%= filled_form.user.name %></td>
+        <td><%= state_label filled_form %></td>
         <td><%= l filled_form.created_at %></td>
         <td><%= l filled_form.updated_at %></td>
         <td>
