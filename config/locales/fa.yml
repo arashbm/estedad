@@ -48,6 +48,11 @@ fa:
       fill_new_html: <i class='icon-plus'></i> پر کردن
     form_filled_forms:
       edit_html: <i class='icon-edit'></i> تکمیل 
+  filled_forms:
+    new:
+      are_you_sure_html: با این عمل یک <strong>جدید</strong> برای «%{name}» را آغاز می‌کنید. آیا می‌خواهید ادامه‌دهید؟
+    edit:
+      what_is_it_html: <p>می‌توانید فرم را در چند مرحله پر کنید ولی به محض پایان‌یافتن زمان مقرر برای ارائه‌ی درخواست یا کامل‌شدن همه‌ی فیلد‌های اجباری، درخواست شما خود‌به‌خود وارد پروسه‌ی بررسی توسط دفتر استعدادهای درخشان و طی مراحل اداری می‌شود.</p><p>بهتر است هر چند وقت یک‌بار برای از دستد ندادن اطلاعات درخواست خود را ذخیره کنید.</p>
   admins:
     forms:
       index:
@@ -67,8 +72,16 @@ fa:
     models:
       user: کاربر
       form: فرم
-      filled_form: فرم پر شده
+      filled_form: درخواست
+      field: فیلد
     attributes:
+      field:
+        name: عنوان
+        type: نوع
+        description: توضیحات
+        min: حداقل ورودی قابل قبود
+        max: حداکثر ورودی قابل قبول
+        steps: قدم‌های قابل قبول
       user:
         email: ایمیل
         password: رمز‌عبور

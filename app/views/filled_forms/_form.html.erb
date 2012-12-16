@@ -4,13 +4,17 @@
   <div class='form-inputs'>
     <%= f.fields_for :filled_fields do |ff| %>
       <% field = ff.object.field %>
-      <%= ff.input :value, label: field.name, as: field.input_type %>
       <%# Here we will render filledfields %>
+      <% if field.input_type == :attachinary %>
+        <%= ff.input :attachments, label: field.name, hint: field.description, as: :attachinary, multipe: field.option('multipe') %>
+      <% else %>
+        <%= ff.input :value, label: field.name, hint: field.description, as: field.input_type, collection: field.splited_collection %>
+      <% end %>
     <% end %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, class: 'btn-primary' %>
     <%= link_to t('.cancel', default: t("helpers.links.cancel")),
-      form_filled_forms_path(@form), class: 'btn' %>
+      form_path(@form), class: 'btn' %>
   </div>
 <% end %>
