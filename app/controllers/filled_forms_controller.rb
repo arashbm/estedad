@@ -1,9 +1,9 @@
 class FilledFormsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :get_form, on: [:show, :edit, :update]
-  before_filter :get_form_to_fill, on: [:new, :create]
-  before_filter :get_editable_filled_forms, on: [:edit, :update]
-  before_filter :get_visible_filled_forms, on: [:show]
+  before_filter :get_form, only: [:show, :edit, :update]
+  before_filter :get_form_to_fill, only: [:new, :create]
+  before_filter :get_editable_filled_forms, only: [:edit, :update]
+  before_filter :get_visible_filled_forms, only: [:show]
   
   def show
     @filled_form = @filled_forms.find(params[:id])

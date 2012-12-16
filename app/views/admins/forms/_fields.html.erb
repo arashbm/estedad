@@ -10,7 +10,7 @@
     data: { update_url: sort_admins_form_fields_url(form) } do %>
     <%= content_tag_for :li, form.fields do |field| %>
       <span class='handle'><i class='icon-reorder'></i></span>
-      <%= field.name %> (<%= field.type %>)
+      <%= field.name %> (<%= translated_types field %>)
       <%= link_to t('helpers.links.edit_html'), edit_admins_form_field_path(form, field),
         class: 'btn btn-mini' %>
       <%= link_to t('helpers.links.destroy_html'), admins_form_field_path(form, field),

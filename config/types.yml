@@ -1,0 +1,45 @@
+generic_string:
+  options:
+    min_char_limit: number
+    max_char_limit: number
+  validations: []
+  as: string
+
+genric_radio_buttons:
+  options:
+    collection: array
+  validations: [inclusion]
+  as: radio_buttons
+
+generic_check_boxes:
+  options:
+    collection: array
+  validations: [all_inclusion]
+  as: chack_boxes
+
+generic_number:
+  options:
+    min: number
+    max: number
+    steps: number
+  validations: [numericality] 
+  as: float
+
+attachinary_file:
+  options:
+    multiple: boolean
+  default:
+    multiple: true
+  as: attachinary
+
+points:
+  options:
+    min: number
+    max: number
+    steps: number
+  default:
+    min: 0
+    max: 20
+    steps: 0.01
+  validations: [numericality]
+  as: float

@@ -1,11 +1,17 @@
 <%= simple_form_for [:admins, @form, @field], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <%= f.input :type %>
+  <%= f.input :type, collection: Rails.configuration.field_types.keys, input_html: { data:{fields: Rails.configuration.field_types}} %>
   <%= f.input :description %>
-  <%# <%= f.input :data %1> %>
+  <%= f.input :min, as: :float, wrapper_html: {class: 'op-min'} %>
+  <%= f.input :max, as: :float, wrapper_html: {class: 'op-max'} %>
+  <%= f.input :steps, as: :float, wrapper_html: {class: 'op-steps'} %>
+  <%= f.input :min_char_limit, as: :integer, wrapper_html: {class: 'op-min_char_limit'} %>
+  <%= f.input :max_char_limit, as: :integer, wrapper_html: {class: 'op-max_char_limit'} %>
+  <%= f.input :multiple, as: :boolean, wrapper_html: {class: 'op-multiple'} %>
+  <%= f.input :collection, wrapper_html: {class: 'op-collection'} %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                admins_form_path(@form), :class => 'btn' %>
+      admins_form_path(@form), :class => 'btn' %>
   </div>
 <% end %>
