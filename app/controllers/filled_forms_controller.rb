@@ -20,6 +20,8 @@ class FilledFormsController < ApplicationController
   end
 
   def create
+    @form = current_user.fillable_forms.find params[:form_id]
+    @filled_forms = @form.filled_forms.where(user_id: current_user.id)
     @filled_form = @filled_forms.create(params[:filled_form])
     respond_with @form, @filled_form, location: edit_form_filled_form_path(@form, @filled_form)
   end
@@ -29,6 +31,12 @@ class FilledFormsController < ApplicationController
     @filled_form.update_attributes(params[:filled_form])
     respond_with(@form, @filled_form)
   end
+
+  # def destroy
+  #   @filled_form = @filled_forms.find(params[:id])
+  #   @filled_form.destroy
+  #   respond_with(@form, @filled_form)
+  # end
 
   private
   def get_form_to_fill

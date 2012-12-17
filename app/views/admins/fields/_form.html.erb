@@ -1,6 +1,6 @@
 <%= simple_form_for [:admins, @form, @field], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <%= f.input :type, collection: Rails.configuration.field_types.keys, input_html: { data:{fields: Rails.configuration.field_types}} %>
+  <%= f.input :type, collection: Rails.configuration.field_types.keys.map(&:to_sym), input_html: { data:{fields: Rails.configuration.field_types}} %>
   <%= f.input :description %>
   <%= f.input :min, as: :float, wrapper_html: {class: 'op-min'} %>
   <%= f.input :max, as: :float, wrapper_html: {class: 'op-max'} %>
