@@ -1,18 +1,12 @@
-<%- model_class = Form -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= @form.title %></h1>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @form.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:enabled) %>:</strong></dt>
-  <dd><%= @form.enabled %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @form.description %></dd>
-</dl>
+<%= not_enabled_alert unless @form.enabled? %>
+<%= content_tag :div, @form.description %>
+<%= render 'form_filled_forms', form: @form %>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              forms_path, :class => 'btn'  %>
+  <%= fill_new_btn @form %>
+  <%= link_to t('.back', default: t("helpers.links.back")),
+    forms_path, :class => 'btn'  %>
 </div>

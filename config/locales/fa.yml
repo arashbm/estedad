@@ -2,43 +2,134 @@ fa:
   estedad: 'استعداد‌های درخشان'
   estedad_title: 'دفتر استعداد‌های درخشان دانشگاه شهید بهشتی'
 
-  # hack to translate true and boolean
+  # hack to translate boolean
   "true": بله
   "false": خیر 
-
-  navbar:
-    blog: اخبار و اطلاعیه‌ها
-    filled_forms: فرم‌های پر شده
-    forms: مدیریت فرم‌ها
-    logout_html: <i class='icon-signout'></i> خروج
-
+      
   helpers:
+    submit:
+      create: ! 'ایجاد %{model}'
+      submit: ! 'ذخیره‌ی %{model} ذخیره'
+      update: ! 'بروز رسانی %{model}'
     actions: امکانات
     links:
       destroy_html: <i class="icon-trash"></i> حذف
       edit_html: <i class="icon-edit"></i> ویرایش
       new_html: <i class="icon-plus"></i> جدید
       confirm: این عمل حذف غیر قابل بازگشت است. آیا مطمئنید؟
+      cancel: بی‌خیال 
       back: بازگشت
+    titles:
+      new: "ایجاد %{model} جدید"
+      edit: "ویرایش %{model}"
+      index: "%{model}‌ها"
+      show: "%{model}"
+
+  layouts:
+    navbar: &navbar
+      blog: اخبار و اطلاعیه‌ها
+      logout_html: <i class='icon-signout'></i> خروج
+      sign_in_html: <i class='icon-signin'></i> ورود
+      sign_up_html: <i class='icon-user'></i> ثبت‌نام
+    admin_navbar:
+      <<: *navbar
+      filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
+      forms: مدیریت فرم‌ها
+    user_navbar:
+      <<: *navbar
+      forms: تسهیلات
+      prefrences_html: <i class="icon-cog"></i> مشخصات
   blogs:
     index:
       title: آخرین اخبار
       new_html: <i class="icon-plus"></i> خبر جدید
+  forms:
+    not_enabled_html: <p>این فرم <strong>فعال نیست</strong>. ممکن است امکان استفاده از آن هنوز فعال نشده باشد یا مدت پر کردن آن به اتمام رسیده باشد. تا فعال شدن مجدد آن شما <em>قادر نخواهید بود نسخه‌ی جدیدی از آن پر کنید</em>. هرچند هنوز <em>قادر هستید نسخه‌های <strong>پر‌شده و بررسی نشده‌ی قبلی</strong> را ویرایش کنید</em>.</p><p>اگر فکر می‌کنید این یک اشتباه است با دفتر استعدادهای درخشان تماس بگیرید.</p>
+    index:
+      title: درخواست تسهیلات
+      fill_new_html: <i class='icon-plus'></i> پر کردن
+    show:
+      fill_new_html: <i class='icon-plus'></i> پر کردن
+    form_filled_forms:
+      edit_html: <i class='icon-edit'></i> تکمیل 
+  filled_forms:
+    new:
+      are_you_sure_html: با این عمل یک <strong>جدید</strong> برای «%{name}» را آغاز می‌کنید. آیا می‌خواهید ادامه‌دهید؟
+    edit:
+      what_is_it_html: <p>می‌توانید فرم را در چند مرحله پر کنید ولی به محض پایان‌یافتن زمان مقرر برای ارائه‌ی درخواست یا کامل‌شدن همه‌ی فیلد‌های اجباری، درخواست شما خود‌به‌خود وارد پروسه‌ی بررسی توسط دفتر استعدادهای درخشان و طی مراحل اداری می‌شود.</p><p>بهتر است هر چند وقت یک‌بار برای از دستد ندادن اطلاعات درخواست خود را ذخیره کنید.</p>
+  users:
+    shared:
+      links:
+        forgot_password?: رمز‌تان را فراموش کرده‌اید؟
+        sign_up: ثبت‌نام
+        sign_in: ورود
+    sessions:
+      new:
+        sign-in: ورود
+    registrations:
+      new:
+        sign-up: ثبت‌نام
+      edit:
+        title: ویرایش مشخصات
+        update: به روز رسانی
+        
   admins:
     forms:
       index:
         title: مدیریت فرم‌ها
+        filled_form_count: "%{count} نسخه پر شده (%{not_reviewed_count} بررسی نشده)"
+      show:
+        filled_form_count: "%{count} نسخه پر شده (%{not_reviewed_count} بررسی نشده)"
       fields:
         description: برای مرتب کردن فیلد‌ها می‌توانید آنها را از دستگیره به بالا و پایین بکشید.
         no_fields: هنوز هیچ فیلدی برای این فرم در نظر نگرفته‌اید. 
         new_field_html: <i class="icon-plus"></i> فیلد جدید
+    filled_forms:
+      index:
+        title_html: نسخه‌های پر شده <small>%{form}</small>
 
   activerecord:
     models:
+      user: کاربر
       form: فرم
+      filled_form: درخواست
+      field: فیلد
+      blog: اطلاعیه
     attributes:
+      blog:
+        title: عنوان
+        body: بدنه
+      field:
+        name: عنوان
+        type: نوع
+        description: توضیحات
+        min: حداقل ورودی قابل قبود
+        max: حداکثر ورودی قابل قبول
+        steps: قدم‌های قابل قبول
+      user:
+        email: ایمیل
+        first_name: نام
+        last_name: نام خانوادگی
+        father_name: نام پدر
+        phone_number: شماره‌ی تلفن
+        mobile_number: شماره‌ی موبایل
+        major: رشته
+        minor: گرایش
+        identification_number: شماره‌ی ملی
+        birth_date: تاریخ تولد
+        student_identification_number: شماره‌ی دانشجویی
+        password: رمز‌عبور
+        password_confirmation: مجددا همان رمز عبور
+        current_password: رمز عبور فعلی
+      filled_form:
+        created_at: تاریخ ایجاد
+        updated_at: آخرین تغییرات
+        state: وضعیت
+        user: کاربر
+        id: شناسه
       form:
         title: عنوان
         description: توضیحات
         enabled: فعال؟ 
         created_at: تاریخ ایجاد
+        filled_forms: فرم پر شده

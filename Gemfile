@@ -53,5 +53,7 @@ gem 'rails-i18n'
 # exception notification with errbit
 gem 'airbrake'
 
+gem 'cloudinary'
+gem 'attachinary'
 # To use debugger
 # gem 'debugger'

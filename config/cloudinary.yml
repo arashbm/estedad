@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hnjmumglx
+  api_key: '598442296786642'
+  api_secret: 0VXpfwsEfIuruC1JDccs571pCwk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hnjmumglx
+  api_key: '598442296786642'
+  api_secret: 0VXpfwsEfIuruC1JDccs571pCwk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hnjmumglx
+  api_key: '598442296786642'
+  api_secret: 0VXpfwsEfIuruC1JDccs571pCwk
+  enhance_image_tag: true
+  static_image_support: false

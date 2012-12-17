@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207132216) do
+ActiveRecord::Schema.define(:version => 20121216222137) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,13 +31,21 @@ ActiveRecord::Schema.define(:version => 20121207132216) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
-  create_table "admins_forms", :force => true do |t|
-    t.string   "title"
-    t.boolean  "enabled"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "attachinary_files", :force => true do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], :name => "by_scoped_parent"
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -58,6 +66,25 @@ ActiveRecord::Schema.define(:version => 20121207132216) do
   end
 
   add_index "fields", ["form_id"], :name => "index_fields_on_form_id"
+
+  create_table "filled_fields", :force => true do |t|
+    t.text     "value"
+    t.integer  "field_id"
+    t.integer  "filled_form_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "filled_forms", :force => true do |t|
+    t.integer  "form_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "state"
+  end
+
+  add_index "filled_forms", ["form_id"], :name => "index_filled_forms_on_form_id"
+  add_index "filled_forms", ["user_id"], :name => "index_filled_forms_on_user_id"
 
   create_table "forms", :force => true do |t|
     t.string   "title"
@@ -80,6 +107,9 @@ ActiveRecord::Schema.define(:version => 20121207132216) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "data"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

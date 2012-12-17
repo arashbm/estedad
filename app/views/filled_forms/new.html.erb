@@ -1,0 +1,6 @@
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', model: FilledForm.model_name.human) %></h1>
+</div>
+<%= content_tag :div, @form.description %>
+<%= content_tag :p, t('.are_you_sure_html', name: @form.title), class: 'alert' %>
+<%= render :partial => 'create_form' %>

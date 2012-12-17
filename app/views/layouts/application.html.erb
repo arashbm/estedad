@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir='rtl'>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -16,23 +16,28 @@
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
-    <%= favicon_link_tag 'assets/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
     <!-- For iPhone with high-resolution Retina display: -->
     <!-- Size should be 114 x 114 pixels -->
-    <%= favicon_link_tag 'assets/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
     <!-- For first- and second-generation iPad: -->
     <!-- Size should be 72 x 72 pixels -->
-    <%= favicon_link_tag 'assets/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <!-- Size should be 57 x 57 pixels -->
-    <%= favicon_link_tag 'assets/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'assets/favicon.ico', :rel => 'shortcut icon' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <!-- Javascripts
+    ================================================== -->
+    <%= javascript_include_tag "application" %>
+    <%= cloudinary_js_config %>
   </head>
   <body>
 
@@ -48,7 +53,7 @@
           <% if admin_signed_in? %>
             <%= render 'layouts/admin_navbar' %>
           <% elsif user_signed_in? %>
-            <%= render 'layouts/student_navbar' %>
+            <%= render 'layouts/user_navbar' %>
           <% else%>
             <%= render 'layouts/navbar' %>
           <% end %>
@@ -57,39 +62,28 @@
     </div>
 
     <div class="container">
-        <div class="row">
-          <div class="span9">
-             <%= yield %>
-          </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
-        </div><!--/row-->
+      <div class="row">
+        <% flash.each do |level, content| %>
+          <%= content_tag :div, class: "alert alert-#{flash_class level }"  do %>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <%= content %>
+          <% end %>
+        <% end %>
+        <%= yield %>
+      </div>
 
       <footer>
-        <hr />
-        <p>&copy; Company 2012</p>
-        <ul class='unstyled'>
-          <% unless admin_signed_in? %>
-            <li><%= link_to "<i class='icon-lock'></i> ورود مدیر".html_safe, new_admin_session_path %></li>
-          <% end %>
-        </ul>
+      <hr />
+      <p>&copy; Company 2012</p>
+      <ul class='unstyled'>
+        <% unless admin_signed_in? %>
+          <li><%= link_to "<i class='icon-lock'></i> ورود مدیر".html_safe, new_admin_session_path %></li>
+        <% end %>
+      </ul>
       </footer>
 
     </div> <!-- /container -->
 
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
 
   </body>
 </html>

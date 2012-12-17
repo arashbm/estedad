@@ -1,7 +1,12 @@
 <div class="container nav-collapse">
   <ul class="nav">
-    <li><%= link_to "Link1", "/path1"  %></li>
-    <li><%= link_to "Link2", "/path2"  %></li>
-    <li><%= link_to "Link3", "/path3"  %></li>
+    <li><%= link_to t('.blog'), blogs_path  %></li>
+    <li><%= link_to t('.forms'), forms_path  %></li>
   </ul>
+  <div class="pull-right">
+    <ul class="nav pull-right">
+      <li><%= link_to t('.prefrences_html'), edit_user_registration_path %></li>
+      <li><%= link_to t('.logout_html'), destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </div>
 </div><!--/.nav-collapse -->
