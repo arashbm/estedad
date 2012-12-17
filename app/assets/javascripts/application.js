@@ -18,5 +18,5 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap-rtl
 //= require_tree .

@@ -7,6 +7,10 @@ fa:
   "false": خیر 
       
   helpers:
+    submit:
+      create: ! 'ایجاد %{model}'
+      submit: ! 'ذخیره‌ی %{model} ذخیره'
+      update: ! 'بروز رسانی %{model}'
     actions: امکانات
     links:
       destroy_html: <i class="icon-trash"></i> حذف
@@ -90,7 +94,11 @@ fa:
       form: فرم
       filled_form: درخواست
       field: فیلد
+      blog: اطلاعیه
     attributes:
+      blog:
+        title: عنوان
+        body: بدنه
       field:
         name: عنوان
         type: نوع
