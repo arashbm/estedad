@@ -19,4 +19,5 @@
 //= require attachinary
 //= require jquery_ujs
 //= require bootstrap-rtl
+//= require marked
 //= require_tree .

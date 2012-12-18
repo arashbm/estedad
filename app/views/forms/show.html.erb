@@ -2,7 +2,7 @@
   <h1><%= @form.title %></h1>
 </div>
 <%= not_enabled_alert unless @form.enabled? %>
-<%= content_tag :div, @form.description %>
+<%= content_tag :div, @form.description, data: { markdown: @form.description } %>
 <%= render 'form_filled_forms', form: @form %>
 
 <div class="form-actions">

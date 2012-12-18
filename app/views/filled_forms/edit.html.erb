@@ -4,5 +4,5 @@
                                    :default => "Edit #{model_class.model_name.human}") %></h1>
 </div>
 <%= content_tag :div, t('.what_is_it_html'), class: 'alert alert-block alert-info' %>
-<%= content_tag :div, @filled_form.form.description %>
+<%= content_tag :div, @filled_form.form.description, data: { markdown: @filled_form.form.description } %>
 <%= render :partial => 'form' %>
