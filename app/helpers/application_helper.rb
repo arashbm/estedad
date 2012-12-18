@@ -14,4 +14,9 @@ module ApplicationHelper
     when :alert then "warning"
     end
   end
+  def localize_date(object, options= { format: :default })
+    type = object.respond_to?(:sec) ? 'time' : 'date'
+    str_format = I18n.t("jalali.#{type}.formats.#{options[:format].to_s}")
+    JalaliDate.new(object).strftime(str_format)
+  end
 end
