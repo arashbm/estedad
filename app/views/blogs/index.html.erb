@@ -6,7 +6,7 @@
   new_blog_path,
   :class => 'btn btn-primary' if admin_signed_in? %>  
 <%= content_tag_for :article, @blogs do |post| %>
-  <h2><%= post.title %></h2>
+  <h2><%= post.title %> <small><%= l post.created_at, format: :short %></small></h2>
   <%= content_tag :div, post.body, data: { markdown: post.body } %>
 
   <% if admin_signed_in? %>  
