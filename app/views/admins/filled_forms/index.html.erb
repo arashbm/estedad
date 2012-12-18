@@ -18,8 +18,8 @@
         <td><%= link_to filled_form.id, admins_form_filled_form_path(@form, filled_form) %></td>
         <td><%= filled_form.user.name %></td>
         <td><%= state_label filled_form %></td>
-        <td><%= l filled_form.created_at %></td>
-        <td><%= l filled_form.updated_at %></td>
+        <td><%= localize_date filled_form.created_at, format: :short %></td>
+        <td><%= localize_date filled_form.updated_at, format: :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit_html")),
                       edit_admins_form_filled_form_path(@form, filled_form), :class => 'btn btn-mini' %>
