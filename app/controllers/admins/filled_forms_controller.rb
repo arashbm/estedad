@@ -22,7 +22,7 @@ class Admins::FilledFormsController < ApplicationController
 
   def create
     @filled_form = @form.filled_forms.create(params[:filled_form], as: :admin)
-    respond_with(:admins, @form, @filled_form, location: edit_form_filled_form(@form, @filled_form))
+    respond_with(:admins, @form, @filled_form, location: edit_form_filled_form_path(@form, @filled_form))
   end
 
   def update
