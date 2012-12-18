@@ -6,7 +6,7 @@
   <li><strong><%= Form.human_attribute_name(:enabled) %>:</strong>
   <%= t @form.enabled?.to_s %></li>
   <li><strong><%= Form.human_attribute_name(:description) %>:</strong>
-  <%= content_tag :div, @form.description %></li>
+  <%= content_tag :div, @form.description, data: { markdown: @form.description } %></li>
 </ul>
 
 <%= render 'fields', form: @form %>
