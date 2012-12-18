@@ -47,6 +47,7 @@ gem 'twitter-bootstrap-rails'
 gem 'marked-rails'
 
 gem 'rails-i18n'
+gem 'jalalidate'
 # Deploy with Capistrano
 # gem 'capistrano'
 

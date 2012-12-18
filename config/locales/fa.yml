@@ -5,6 +5,18 @@ fa:
   # hack to translate boolean
   "true": بله
   "false": خیر 
+
+  jalali:
+    time:
+      formats:
+        default: ! '%A، %e %b %Y، ساعت %H:%M:%S (%Z)'
+        long: ! '%e %b %Y، ساعت %H:%M'
+        short: ! '%e %b، ساعت %H:%M'
+    date:
+      formats:
+        default: ! '%Y/%m/%d'
+        long: ! '%e %B %Y'
+        short: ! '%m/%d'
       
   helpers:
     submit:

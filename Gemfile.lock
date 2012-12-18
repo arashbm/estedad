@@ -67,6 +67,7 @@ GEM
     high_voltage (1.2.1)
     hike (1.2.1)
     i18n (0.6.1)
+    jalalidate (0.3.1)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
@@ -165,6 +166,7 @@ DEPENDENCIES
   devise
   devise-i18n
   high_voltage
+  jalalidate
   jquery-rails
   letter_opener
   marked-rails
