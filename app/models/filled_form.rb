@@ -19,10 +19,6 @@ class FilledForm < ActiveRecord::Base
     self.state ||= :not_reviewed
   end
 
-  def state
-    'dummy'
-  end
-
   def ensure_fields
     form.fields.each do |i|
       filled_fields.find_or_create_by_field_id!(i.id)
