@@ -3,6 +3,7 @@ Estedad::Application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   namespace :admins do
+    resources :users
     resources :forms do
       resources :filled_forms
       resources :fields do

@@ -29,7 +29,7 @@ fa:
       edit_html: <i class="icon-edit"></i> ویرایش
       new_html: <i class="icon-plus"></i> جدید
       confirm: این عمل حذف غیر قابل بازگشت است. آیا مطمئنید؟
-      cancel: بی‌خیال 
+      cancel: انصراف 
       back: بازگشت
     titles:
       new: "ایجاد %{model} جدید"
@@ -47,6 +47,7 @@ fa:
       <<: *navbar
       filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
       forms: مدیریت فرم‌ها
+      users: مددیریت کاربران
     user_navbar:
       <<: *navbar
       forms: تسهیلات
@@ -99,6 +100,11 @@ fa:
     filled_forms:
       index:
         title_html: نسخه‌های پر شده <small>%{form}</small>
+    users:
+      index:
+        title: کاربران
+      edit:
+        update_password: بروز رسانی رمز عبور
 
   activerecord:
     models:
@@ -119,6 +125,7 @@ fa:
         max: حداکثر ورودی قابل قبول
         steps: قدم‌های قابل قبول
       user:
+        name: نام
         email: ایمیل
         first_name: نام
         last_name: نام خانوادگی
