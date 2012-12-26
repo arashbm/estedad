@@ -47,10 +47,14 @@ fa:
       <<: *navbar
       filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
       forms: مدیریت فرم‌ها
+      users: مدیریت کاربران
     user_navbar:
       <<: *navbar
       forms: تسهیلات
       prefrences_html: <i class="icon-cog"></i> مشخصات
+  pages:
+    index:
+      title: مدیریت صفحات ایستا
   blogs:
     index:
       title: آخرین اخبار
@@ -99,6 +103,11 @@ fa:
     filled_forms:
       index:
         title_html: نسخه‌های پر شده <small>%{form}</small>
+    users:
+      index:
+        title: کاربران
+      edit:
+        update_password: بروز رسانی رمز عبور
 
   activerecord:
     models:
@@ -107,7 +116,14 @@ fa:
       filled_form: درخواست
       field: فیلد
       blog: اطلاعیه
+      page: صفحه‌ی ثابت
     attributes:
+      page:
+        id: شناسه
+        url: URL
+        title: عنوان
+        content: محتوا
+        attachments: ضمائم
       blog:
         title: عنوان
         body: بدنه
@@ -119,6 +135,7 @@ fa:
         max: حداکثر ورودی قابل قبول
         steps: قدم‌های قابل قبول
       user:
+        name: نام
         email: ایمیل
         first_name: نام
         last_name: نام خانوادگی

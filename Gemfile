@@ -36,7 +36,6 @@ gem 'jquery-rails'
 # Use thin as the app server
 gem 'thin'
 
-gem 'high_voltage'
 gem 'simple_form'
 gem 'responders'
 
