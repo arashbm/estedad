@@ -1,5 +1,16 @@
 Estedad::Application.routes.draw do
 
+  root to: 'blogs#index'
+  
+  resources :pages
+  resources :blogs
+  resources :forms do
+    resources :filled_forms, only: [:show, :create, :update, :new, :edit]
+  end
+
+  devise_for :admins
+  devise_for :users
+
   mount Attachinary::Engine => "/attachinary"
 
   namespace :admins do
@@ -14,14 +25,4 @@ Estedad::Application.routes.draw do
     end
   end
 
-  resources :forms do
-    resources :filled_forms, only: [:show, :create, :update, :new, :edit]
-  end
-
-  resources :blogs
-
-  root to: 'blogs#index'
-
-  devise_for :admins
-  devise_for :users
 end

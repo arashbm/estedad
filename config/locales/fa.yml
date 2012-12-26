@@ -29,7 +29,7 @@ fa:
       edit_html: <i class="icon-edit"></i> ویرایش
       new_html: <i class="icon-plus"></i> جدید
       confirm: این عمل حذف غیر قابل بازگشت است. آیا مطمئنید؟
-      cancel: انصراف 
+      cancel: بی‌خیال 
       back: بازگشت
     titles:
       new: "ایجاد %{model} جدید"
@@ -47,11 +47,14 @@ fa:
       <<: *navbar
       filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
       forms: مدیریت فرم‌ها
-      users: مددیریت کاربران
+      users: مدیریت کاربران
     user_navbar:
       <<: *navbar
       forms: تسهیلات
       prefrences_html: <i class="icon-cog"></i> مشخصات
+  pages:
+    index:
+      title: مدیریت صفحات ایستا
   blogs:
     index:
       title: آخرین اخبار
@@ -113,7 +116,14 @@ fa:
       filled_form: درخواست
       field: فیلد
       blog: اطلاعیه
+      page: صفحه‌ی ثابت
     attributes:
+      page:
+        id: شناسه
+        url: URL
+        title: عنوان
+        content: محتوا
+        attachments: ضمائم
       blog:
         title: عنوان
         body: بدنه
