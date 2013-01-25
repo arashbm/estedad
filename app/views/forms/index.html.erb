@@ -4,8 +4,7 @@
 <%= content_tag_for :article, @forms do |form| %>
   <%= not_enabled_alert unless form.enabled? %>
   <h2><%= link_to form.title, form %></h2>
-  <%= content_tag :div, form.description, data: { markdown: form.description } %>
   <%= render 'form_filled_forms', form: form %>
-  <%= fill_new_btn form %>
+  <%= link_to t('.view_details_html'), form, class: 'btn' %>
   <hr />
 <% end %>
