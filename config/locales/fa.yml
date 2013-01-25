@@ -48,6 +48,7 @@ fa:
       filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
       forms: مدیریت فرم‌ها
       users: مدیریت کاربران
+      pages: مدیریت صفحات ایستا
     user_navbar:
       <<: *navbar
       forms: تسهیلات

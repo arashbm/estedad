@@ -5,11 +5,11 @@
 <div>
   <p>
     <strong><%= FilledForm.human_attribute_name(:created_at) %>:</strong>
-    <%= l @filled_form.created_at %>
+    <%= localize_date @filled_form.created_at %>
   </p>
   <p>
     <strong><%= FilledForm.human_attribute_name(:updated_at) %>:</strong>
-    <%= l @filled_form.updated_at %>
+    <%= localize_date @filled_form.updated_at %>
   </p>
   <p>
     <strong><%= FilledForm.human_attribute_name(:state) %>:</strong>

@@ -18,7 +18,7 @@
         <td><%= link_to filled_form.id, filled_form_path(filled_form) %></td>
         <td><%= filled_form.form_id %></td>
         <td><%= filled_form.user_id %></td>
-        <td><%= l filled_form.created_at %></td>
+        <td><%= localize_date filled_form.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_form_filled_form_path(@form, filled_form), :class => 'btn btn-mini' %>
