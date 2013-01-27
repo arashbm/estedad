@@ -37,7 +37,7 @@ module FilledFormsHelper
   def filled_field_value(filled_field)
     if filled_field.field.type == 'attachinary_file'
       filled_field.attachments.map do |a|
-        "<a href='http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/image/upload/#{a.path}'>#{cl_image_tag(a.path, { size: '75x75', crop: :fill, format: :jpg })}</a>" 
+        "<a target='_blank' href='http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/image/upload/#{a.path}'>#{cl_image_tag(a.path, { size: '75x75', crop: :fill, format: :jpg })}</a>" 
       end.inject(:+).try(:html_safe)
     else
       filled_field.value

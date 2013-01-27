@@ -5,7 +5,7 @@ $.attachinary.config.template = "
   <ul class='media-list'>
     <% for(var i=0; i<files.length; i++){ %>
       <li class='media'>
-        <a class='pull-left' href='<%= $.cloudinary.url(files[i].public_id, { 'version': files[i].version, 'format': 'jpg' }) %>'>
+        <a target='_blank' class='pull-left' href='<%= $.cloudinary.url(files[i].public_id, { 'version': files[i].version, 'format': 'jpg' }) %>'>
           <img src='<%= $.cloudinary.url(files[i].public_id, { 'version': files[i].version, 'format': 'jpg', 'crop': 'fill', 'width': 75, 'height': 75 }) %>' alt='' width='75' height='75' />
         </a>
         <div class='media-body'>
