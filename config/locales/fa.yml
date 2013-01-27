@@ -43,12 +43,14 @@ fa:
       logout_html: <i class='icon-signout'></i> خروج
       sign_in_html: <i class='icon-signin'></i> ورود
       sign_up_html: <i class='icon-user'></i> ثبت‌نام
+      pages_html: اطلاعات <b class='caret'></b>
     admin_navbar:
       <<: *navbar
       filled_forms_html: فرم‌های پر شده <i class='badge'>%{count}</i> <b class='caret'></b>
       forms: مدیریت فرم‌ها
       users: مدیریت کاربران
-      pages: مدیریت صفحات ایستا
+      pages_html: مدیریت صفحات ایستا <b class='caret'></b>
+      pages_index: مدیریت صفحات
     user_navbar:
       <<: *navbar
       forms: تسهیلات
